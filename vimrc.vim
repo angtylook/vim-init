@@ -14,5 +14,6 @@ set guifont=Monaco:h12
 " set guifont=Inconsolata\ NF:h11
 set guifontwide=Droid\ Sans\ Mono:h12
 set rop=type:directx,renmode:5
+colorscheme molokai
 
 let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
