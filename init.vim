@@ -49,5 +49,5 @@ LoadScript init/init-plugins.vim
 " 自定义按键
 LoadScript init/init-keymaps.vim
 
-
-
+" 自定义配置
+LoadScript vimrc.vim

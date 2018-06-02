@@ -346,6 +346,23 @@ if index(g:bundle_group, 'echodoc') >= 0
 	let g:echodoc#enable_at_startup = 1
 endif
 
+"------------------------------
+" golang
+"------------------------------
+Plug 'fatih/vim-go', { 'tag':'v1.17', 'do': ':GoInstallBinaries' }
+
+"------------------------------
+" YouCompleteMe
+"------------------------------
+if has('win32') || has('win64')
+    Plug 'Valloric/YouCompleteMe', {'do': 'py -3 install.py --clang-completer --system-libclang --go-completer --js-completer'}
+    let g:ycm_python_binary_path = 'py'
+else
+    Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --system-libclang --go-completer --js-completer'}
+    let g:ycm_python_binary_path = 'python3'
+endif
+let g:ycm_complete_in_comments = 1
+let g:ycm_autoclose_preview_window_after_insert=1
 
 "----------------------------------------------------------------------
 " 结束插件安装
