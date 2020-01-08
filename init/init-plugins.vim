@@ -520,7 +520,7 @@ endif
 "------------------------------
 " golang
 "------------------------------
-Plug 'fatih/vim-go', { 'tag':'v1.20', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'tag':'v1.21', 'do': ':GoInstallBinaries' }
 
 "------------------------------
 " typescript
@@ -531,10 +531,10 @@ Plug 'leafgarland/typescript-vim'
 " YouCompleteMe
 "------------------------------
 if has('win32') || has('win64')
-    Plug 'Valloric/YouCompleteMe', {'do': 'py -3 install.py --clang-completer --system-libclang --go-completer --js-completer'}
+    Plug 'ycm-core/YouCompleteMe', {'do': 'py -3 install.py --clangd-completer --go-completer --ts-completer --rust-completer'}
     let g:ycm_python_binary_path = 'py'
 else
-    Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --system-libclang --go-completer --js-completer'}
+    Plug 'ycm-core/YouCompleteMe', {'do': 'python3 install.py --clangd-completer --go-completer --ts-completer --rust-completer'}
     let g:ycm_python_binary_path = 'python3'
 endif
 let g:ycm_complete_in_comments = 1
