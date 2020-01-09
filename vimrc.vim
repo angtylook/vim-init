@@ -19,3 +19,4 @@ set guifontwide=DejaVu\ Sans\ Mono:h11
 colorscheme molokai
 
 let g:gutentags_ctags_extra_args += ['--output-format=e-ctags']
+" let pythonthreedll = 'D:/devtools/Python37/python37.dll'
