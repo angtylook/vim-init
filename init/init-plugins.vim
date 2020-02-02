@@ -520,7 +520,7 @@ endif
 "------------------------------
 " golang
 "------------------------------
-Plug 'fatih/vim-go', { 'tag':'v1.21', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'tag':'v1.22', 'do': ':GoInstallBinaries' }
 
 "------------------------------
 " typescript
