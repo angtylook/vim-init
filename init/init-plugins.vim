@@ -54,40 +54,6 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'chrisbra/vim-diff-enhanced'
 
 
-" 自动打开 quickfix window ，高度为 6
-let g:asyncrun_open = 6
-
-" 任务结束时候响铃提醒
-let g:asyncrun_bell = 1
-
-" 设置 F10 打开/关闭 Quickfix 窗口
-nnoremap <F10> :call asyncrun#quickfix_toggle(6)<cr>
-
-" F9 编译 C/C++ 文件
-nnoremap <silent> <F9> :AsyncRun g++ -std=c++2a -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
-
-" F5 运行文件
-nnoremap <silent> <F5> :AsyncRun -raw -cwd=$(VIM_FILEDIR) "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
-
-" F7 编译项目
-nnoremap <silent> <F7> :AsyncRun -cwd=<root> make <cr>
-
-" F8 运行项目
-nnoremap <silent> <F8> :AsyncRun -cwd=<root> -raw make run <cr>
-
-" F6 测试项目
-nnoremap <silent> <F6> :AsyncRun -cwd=<root> -raw make test <cr>
-
-" 更新 cmake
-nnoremap <silent> <F4> :AsyncRun -cwd=<root> cmake . <cr>
-
-" Windows 下支持直接打开新 cmd 窗口运行
-if has('win32') || has('win64')
-	nnoremap <silent> <F5> :AsyncRun -cwd=$(VIM_FILEDIR) -mode=4 "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
-	nnoremap <silent> <F8> :AsyncRun -cwd=<root> -mode=4 make run <cr>
-endif
-
-
 "----------------------------------------------------------------------
 " Dirvish 设置：自动排序并隐藏文件，同时定位到相关文件
 " 这个排序函数可以将目录排在前面，文件排在后面，并且按照字母顺序排序
@@ -446,18 +412,6 @@ if index(g:bundle_group, 'echodoc') >= 0
 	let g:echodoc#enable_at_startup = 1
 endif
 
-"------------------------------
-" YouCompleteMe
-"------------------------------
-if has('win32') || has('win64')
-    Plug 'Valloric/YouCompleteMe', {'do': 'py -3 install.py --clang-completer --system-libclang --go-completer --js-completer'}
-    let g:ycm_python_binary_path = 'py'
-else
-    Plug 'Valloric/YouCompleteMe', {'do': 'python3 install.py --clang-completer --system-libclang --go-completer --js-completer'}
-    let g:ycm_python_binary_path = 'python3'
-endif
-let g:ycm_complete_in_comments = 1
-let g:ycm_autoclose_preview_window_after_insert=1
 
 "----------------------------------------------------------------------
 " LeaderF：CtrlP / FZF 的超级代替者，文件模糊匹配，tags/函数名 选择
@@ -567,7 +521,7 @@ endif
 "------------------------------
 " golang
 "------------------------------
-Plug 'fatih/vim-go', { 'tag':'v1.22', 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'tag':'v1.23', 'do': ':GoInstallBinaries' }
 
 "------------------------------
 " typescript
